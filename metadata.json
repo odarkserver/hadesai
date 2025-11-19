@@ -1,0 +1,9 @@
+{
+  "name": "Grok-Style Gemini App",
+  "description": "A powerful AI assistant with Chat, Image Generation, Video Creation, and Live Audio, styled like the Grok interface.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
