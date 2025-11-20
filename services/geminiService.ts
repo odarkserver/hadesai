@@ -197,10 +197,7 @@ export const generateChatResponse = async (
   });
 
   const result = await chat.sendMessage({ 
-    message: { 
-        role: 'user', 
-        parts: [...imageParts, { text: prompt }] 
-    } 
+    message: [...imageParts, { text: prompt }] 
   });
 
   let groundingUrls: {title: string, uri: string}[] = [];
@@ -282,7 +279,7 @@ export const generateVideo = async (prompt: string, aspectRatio: string = '16:9'
     }
 
     if (operation.error) {
-        throw new Error(operation.error.message);
+        throw new Error(`${operation.error.message}`);
     }
 
     const uri = operation.response?.generatedVideos?.[0]?.video?.uri;
